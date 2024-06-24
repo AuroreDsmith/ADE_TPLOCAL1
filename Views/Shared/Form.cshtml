@@ -9,7 +9,7 @@
 }
 
     <section>
-        <form action="ValidationFormulaire" method="POST">
+        <form asp-controller="Home" asp-action="ValidationFormulaire" method="POST">
             <table border="1">
                 <thead>
                     <tr>
@@ -19,16 +19,17 @@
                 <tbody>
                     <tr>
                         <td>Nom</td>
-                        <td><input type="text" name="Nom" /></td>
+                        <td><input type="text" asp-for="Nom" /></td>
+                        
                     </tr>
                     <tr>
                         <td>Prénom</td>
-                        <td><input type="text" name="Prenom" /></td>
+                        <td><input type="text" asp-for="Prenom" /></td>
                     </tr>
                     <tr>
                         <td>Genre</td>
                         <td>
-                            <select name="Genre" id="genre">
+                            <select asp-for="Genre" id="genre">
                                 <option value="Default">Sélectionner un genre</option>
                                 <option value="Homme">Homme</option>
                                 <option value="Femme">Femme</option>
@@ -38,19 +39,19 @@
                     </tr>
                     <tr>
                         <td>Adresse</td>
-                        <td><input type="text" name="Adresse" /></td>
+                        <td><input type="text" asp-for="Adresse" /></td>
                     </tr>
                     <tr>
                         <td>Code Postal</td>
-                        <td><input type="text" name="CodePostal" /></td>
+                        <td><input type="text" asp-for="CodePostal" /></td>
                     </tr>
                     <tr>
                         <td>Ville</td>
-                        <td><input type="text" name="Ville" /></td>
+                        <td><input type="text" asp-for="Ville" /></td>
                     </tr>
                     <tr>
                         <td>Adresse mail</td>
-                        <td><input type="text" name="Email" /></td>
+                        <td><input type="text" asp-for="Email" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -65,12 +66,12 @@
                 <tbody>
                     <tr>
                         <td>Date début formation</td>
-                        <td><input type="date" max="2021-01-01" name="DateDebut" /></td>
+                        <td><input type="date" max="2021-01-01" asp-for="DateDebut" /></td>
                     </tr>
                     <tr>
                         <td>Formation suivie</td>
                         <td>
-                            <select name="Formation" id="formation">
+                            <select asp-for="TypeFormation" id="formation">
                                 <option value="Default">Choisissez une formation</option>
                                 <option value="Cobol">Formation COBOL</option>
                                 <option value="Objet">Formation Objet</option>
@@ -91,11 +92,11 @@
                 <tbody>
                     <tr>
                         <td>Formation COBOL</td>
-                        <td><input type="text" name="AvisCobol" /></td>
+                        <td><input type="text" asp-for="AvisCobol" /></td>
                     </tr>
                     <tr>
                         <td>Formation C#</td>
-                        <td><input type="text" name="AvisCsharp" /></td>
+                        <td><input type="text" asp-for="AvisCsharp" /></td>
                     </tr>
                 </tbody>
             </table>

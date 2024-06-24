@@ -10,24 +10,24 @@ namespace TPLOCAL1.Models
         [Required(ErrorMessage = "Prénom requis")]
         public string Prenom { get; set; }
 
-        [Required(ErrorMessage = "Selectionner un genre")]
+        [Required]
         public string Genre { get; set; }
 
         [Required(ErrorMessage = "Adresse requise")]
         public string Adresse { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Code postal requis")]
         [RegularExpression(@"\d{5}", ErrorMessage = "Le code postal doit comporter 5 chiffres.")]
         public int CodePostal { get; set; }
 
         [Required(ErrorMessage = "Nom de la ville requise")]
         public string Ville { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Adresse mail requise")]
+        [EmailAddress(ErrorMessage = "L'adresse mail doit respecter le format email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Date de début de formation requise")]
         [DataType(DataType.Date)]
         [Range(typeof(DateTime), "1/1/1990", "1/1/2021", ErrorMessage = "Date doit être antérieure au 01/01/2021")]
         public DateTime DateDebut { get; set; }

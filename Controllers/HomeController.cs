@@ -43,10 +43,7 @@ namespace TPLOCAL1.Controllers
                 return View(model);
 
             }
-            else
-            {
-                return View("Form");
-            }
+            return View("Form");
         }
     }
 }
