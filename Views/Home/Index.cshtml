@@ -1,26 +1,15 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>HN - TP LOCAL</title>
-    <link href="~/resources/Index.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Welcome to TP HN</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index/Form">Remplir le formulaire</a></li>
-            <li><a href="#">Liste avis</a></li>
-        </ul>
-    </nav>
+﻿@{
+    ViewData["Title"] = "HN - TP LOCAL";
+    ViewData["H1"] = "Bienvenue dans le TP HN";
+    ViewData["LienNav1"] = "Form";
+    ViewData["NomLien1"] = "Remplir le formulaire";
+    ViewData["LienNav2"] = "ListeAvis";
+    ViewData["NomLien2"] = "Liste avis";
+}
     <section>
         <p>
             <a href="/Home/Index/Form">Remplir le formulaire</a>
         </p>
     </section>
-</body>
-</html>
+
 

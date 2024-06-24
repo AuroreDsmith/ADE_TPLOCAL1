@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Liste des avis";
+    ViewData["H1"] = "Liste des avis";
+    ViewData["LienNav1"] = "Index";
+    ViewData["NomLien1"] = "Accueil";
+    ViewData["LienNav2"] = "Form";
+    ViewData["NomLien2"] = "Formulaire";
+}
+
+    <section>
+        <table border="1">
+            <tr>
+                <th colspan="3">Liste</th>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Avis donné</th>
+            </tr>
+
+            @foreach (var avis in Model)
+            {
+                <tr>
+                    <td>
+                        @avis.Nom
+                    </td>
+                    <td>
+                        @avis.Prenom
+                    </td>
+                    @if (@avis.Avis == "O")
+                    {
+                        <td style="background-color: green">Oui</td>
+                    }
+                    else
+                    {
+                        <td style="background-color: red">Non</td>
+                    }
+                </tr>
+            }
+        </table>
+    </section>
+

@@ -1,0 +1,79 @@
+﻿@model TPLOCAL1.Models.FormModel
+@{
+    ViewData["Title"] = "Page de validation";
+    ViewData["H1"] = "Page de validation";
+    ViewData["LienNav1"] = "Index";
+    ViewData["NomLien1"] = "Accueil";
+    ViewData["LienNav2"] = "ListeAvis";
+    ViewData["NomLien2"] = "Liste avis";
+}
+
+    <section>
+        <p>Votre formulaire a bien été pris en compte.</p>
+        <table border="1">
+            <thead>
+                <th colspan="2">Informations personnelles</th>
+            </thead>
+            <tr>
+                <td>Nom</td>
+                <td>@Html.DisplayFor(model => model.Nom)</td>
+            </tr>
+            <tr>
+                <td>Prénom</td>
+                <td>@Html.DisplayFor(model => model.Prenom)</td>
+            </tr>
+            <tr>
+                <td>Genre</td>
+                <td>
+                    @Html.DisplayFor(model => model.Genre)
+                </td>
+            </tr>
+            <tr>
+                <td>Adresse</td>
+                <td>@Html.DisplayFor(model => model.Adresse)</td>
+            </tr>
+            <tr>
+                <td>Code Postal</td>
+                <td>@Html.DisplayFor(model => model.CodePostal)</td>
+            </tr>
+            <tr>
+                <td>Ville</td>
+                <td>@Html.DisplayFor(model => model.Ville)</td>
+            </tr>
+            <tr>
+                <td>Adresse mail</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+        </table>
+        <br />
+
+        <table border="1">
+            <thead>
+                <th colspan="2">Informations sur la formation suivie</th>
+            </thead>
+            <tr>
+                <td>Date début formation</td>
+                <td>@Html.DisplayFor(model => model.DateDebut)</td>
+            </tr>
+            <tr>
+                <td>Formation suivie</td>
+                <td>@Html.DisplayFor(model => model.TypeFormation)</td>
+            </tr>
+        </table>
+        <br />
+
+        <table border="1">
+            <thead>
+                <th colspan="2">Avis sur la formation</th>
+            </thead>
+            <tr>
+                <td>Formation COBOL</td>
+                <td>@Html.DisplayFor(model => model.AvisCobol)</td>
+            </tr>
+            <tr>
+                <td>Formation C#</td>
+                <td>@Html.DisplayFor(model => model.AvisCsharp)</td>
+            </tr>
+        </table>
+    </section>
+

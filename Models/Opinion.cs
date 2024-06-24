@@ -34,16 +34,16 @@ namespace TPLOCAL1.Models
             foreach (XmlNode node in xmlDoc.SelectNodes("root/row"))
             {
                 // Retrieving data from child nodes.
-                string LastName = node["LastName"].InnerText;
-                string FirstName = node["FirstName"].InnerText;
-                string OpinionGiven = node["OpinionGiven"].InnerText;
+                string Nom = node["Nom"].InnerText;
+                string Prenom = node["Prenom"].InnerText;
+                string Avis = node["Avis"].InnerText;
 
                 // Creating the "Opinion" object to add to the results list.
                 Opinion opinion = new Opinion
                 {
-                    LastName = LastName,
-                    FirstName = FirstName,
-                    OpinionGiven = OpinionGiven
+                    Nom = Nom,
+                    Prenom = Prenom,
+                    Avis = Avis
                 };
 
                 // Adding the object to the list.
@@ -67,14 +67,14 @@ namespace TPLOCAL1.Models
         /// <summary>
         /// Last name
         /// </summary>
-        public string LastName { get; set; }
+        public string Nom { get; set; }
         /// <summary>
         /// First name
         /// </summary>
-        public string FirstName { get; set; }
+        public string Prenom { get; set; }
         /// <summary>
         /// Review given (Possible values: O or N)
         /// </summary>
-        public string OpinionGiven { get; set; }
+        public string Avis { get; set; }
     }
 }
