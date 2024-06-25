@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TPLOCAL1.Models;
 
 //Subject is find at the root of the project and the logo in the wwwroot/ressources folders of the solution
@@ -38,6 +38,26 @@ namespace TPLOCAL1.Controllers
         [HttpPost]
         public ActionResult ValidationFormulaire(FormModel model)
         {
+            if(model.Genre == "Default")
+            {
+                ModelState.AddModelError("Genre", "Genre requis");
+            }
+
+            if (model.CodePostal == null)
+            {
+                ModelState.AddModelError("CodePostal", "Code postal requis");
+            }
+
+            if (model.DateDebut == null)
+            {
+                ModelState.AddModelError("DateDebut", "La date de début de formation est requise.");
+            }
+
+            if (model.TypeFormation == "Default")
+            {
+                ModelState.AddModelError("TypeFormation", "Sélectionner une formation");
+            }
+
             if (ModelState.IsValid)
             {
                 return View(model);

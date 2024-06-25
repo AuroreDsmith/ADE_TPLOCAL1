@@ -10,7 +10,7 @@ namespace TPLOCAL1.Models
         [Required(ErrorMessage = "Prénom requis")]
         public string Prenom { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Sélectionner un genre")]
         public string Genre { get; set; }
 
         [Required(ErrorMessage = "Adresse requise")]
@@ -18,7 +18,7 @@ namespace TPLOCAL1.Models
 
         [Required(ErrorMessage = "Code postal requis")]
         [RegularExpression(@"\d{5}", ErrorMessage = "Le code postal doit comporter 5 chiffres.")]
-        public int CodePostal { get; set; }
+        public int? CodePostal { get; set; }
 
         [Required(ErrorMessage = "Nom de la ville requise")]
         public string Ville { get; set; }
@@ -28,9 +28,9 @@ namespace TPLOCAL1.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Date de début de formation requise")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "Format de date incorrect.")]
         [Range(typeof(DateTime), "1/1/1990", "1/1/2021", ErrorMessage = "Date doit être antérieure au 01/01/2021")]
-        public DateTime DateDebut { get; set; }
+        public DateTime? DateDebut { get; set; }
 
         [Required(ErrorMessage = "Selectionner le type de formation")]
         public string TypeFormation { get; set; }
